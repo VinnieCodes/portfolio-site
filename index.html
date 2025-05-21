@@ -39,18 +39,37 @@
         },
       };
     </script>
+    <style>
+      @media (max-width: 1000px) {
+        .desktop-nav {
+          display: none !important;
+        }
+        .mobile-nav {
+          display: flex !important;
+        }
+      }
+      .mobile-nav {
+        display: none;
+      }
+      @media (min-width: 1001px) {
+        #mobile-menu-btn {
+          display: none !important;
+        }
+      }
+    </style>
   </head>
 
   <body class="bg-darkbg min-h-screen flex flex-col text-darktext">
     <header
-      class="flex items-center justify-between px-8 py-4 bg-darkcard shadow fixed w-full z-10 top-0 left-0"
+      class="flex items-center justify-between px-4 py-4 bg-darkcard shadow fixed w-full z-10 top-0 left-0"
     >
       <a href="#home" class="transition-transform hover:scale-105">
         <img src="./img/logo.png" alt="logo" class="h-12 w-auto" />
       </a>
-      <nav class="flex items-center w-full max-w-6xl mx-auto">
+      <!-- Desktop Navbar -->
+      <nav class="desktop-nav flex items-center w-full">
         <ul
-          class="flex flex-1 justify-evenly items-center space-x-0 text-lg font-semibold"
+          class="flex flex-row flex-nowrap items-center justify-between w-full max-w-6xl mx-auto text-lg font-semibold"
         >
           <li>
             <span class="text-lg font-bold text-darktext">Find me on</span>
@@ -111,7 +130,8 @@
               href="#home"
               role="menuitem"
               class="scroll-smooth transition-transform"
-              ><button class="transition hover:scale-105 text-customblue">
+            >
+              <button class="transition hover:scale-105 text-customblue">
                 Home
               </button>
             </a>
@@ -121,7 +141,8 @@
               href="#about"
               role="menuitem"
               class="transition scroll-smooth transition-transform"
-              ><button class="transition hover:scale-105 hover:text-customblue">
+            >
+              <button class="transition hover:scale-105 hover:text-customblue">
                 About Me
               </button>
             </a>
@@ -142,13 +163,145 @@
               href="#work"
               role="menuitem"
               class="transition scroll-smooth transition-transform"
-              ><button class="transition hover:scale-105 hover:text-customblue">
+            >
+              <button class="transition hover:scale-105 hover:text-customblue">
                 My Work
               </button>
             </a>
           </li>
         </ul>
       </nav>
+      <!-- Mobile Navbar -->
+      <div class="mobile-nav flex flex-col items-end relative">
+        <button
+          id="mobile-menu-btn"
+          class="block p-2 focus:outline-none"
+          aria-label="Open menu"
+        >
+          <svg
+            class="w-8 h-8 text-customblue"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 8h16M4 16h16"
+            />
+          </svg>
+        </button>
+        <div
+          id="mobile-menu"
+          class="hidden absolute right-0 top-14 bg-darkcard rounded shadow-lg w-64 p-6 z-50"
+        >
+          <ul class="flex flex-col gap-4 text-lg font-semibold">
+            <li>
+              <span class="text-lg font-bold text-darktext">Find me on</span>
+            </li>
+            <li class="flex gap-3">
+              <a href="https://github.com/VinnieCodes" target="_blank">
+                <img
+                  width="32"
+                  height="32"
+                  src="./img/394187_github_icon.svg"
+                  alt="Github"
+                  class="hover:scale-110 transition"
+                />
+              </a>
+              <a
+                href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=vincentathorne2005@gmail.com"
+                target="_blank"
+              >
+                <img
+                  width="32"
+                  height="32"
+                  src="./img/gmail-icon.png"
+                  alt="Gmail"
+                  class="hover:scale-110 transition"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/vincent-thorne/"
+                target="_blank"
+              >
+                <img
+                  width="32"
+                  height="32"
+                  src="./img/317750_linkedin_icon.svg"
+                  alt="LinkedIn"
+                  class="hover:scale-110 transition"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="./pdf/Resume.pdf" target="_blank">
+                <button
+                  class="flex items-center gap-1 px-4 py-1 bg-customblue text-white rounded shadow transition font-semibold text-sm hover:scale-105 hover:bg-customblue w-full justify-center"
+                >
+                  My Resume
+                  <span class="material-symbols-outlined text-base"
+                    >open_in_new</span
+                  >
+                </button>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#home"
+                role="menuitem"
+                class="scroll-smooth transition-transform block w-full"
+              >
+                <button
+                  class="transition hover:scale-105 text-customblue w-full text-left"
+                >
+                  Home
+                </button>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                role="menuitem"
+                class="transition scroll-smooth transition-transform block w-full"
+              >
+                <button
+                  class="transition hover:scale-105 hover:text-customblue w-full text-left"
+                >
+                  About Me
+                </button>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                role="menuitem"
+                class="transition scroll-smooth transition-transform block w-full"
+              >
+                <button
+                  class="transition hover:scale-105 hover:text-customblue w-full text-left"
+                >
+                  Contact Me
+                </button>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#work"
+                role="menuitem"
+                class="transition scroll-smooth transition-transform block w-full"
+              >
+                <button
+                  class="transition hover:scale-105 hover:text-customblue w-full text-left"
+                >
+                  My Work
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <main class="flex-1 flex flex-col items-center justify-center px-4 pt-32">
@@ -525,6 +678,22 @@
             document.querySelector(href).scrollIntoView({ behavior: "smooth" });
           }
         });
+      });
+      // Mobile menu toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        if (btn && menu) {
+          btn.addEventListener("click", function () {
+            menu.classList.toggle("hidden");
+          });
+          // Optional: close menu on link click
+          menu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              menu.classList.add("hidden");
+            });
+          });
+        }
       });
     </script>
   </body>
