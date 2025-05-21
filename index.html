@@ -23,110 +23,509 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new"
     />
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              customblue: "#2144a3",
+              darkbg: "#eee",
+              darkcard: "#e0e0e0",
+              darktext: "#232323",
+            },
+          },
+        },
+      };
+    </script>
   </head>
 
-  <body>
-    <header class="page-header">
-      <a href="./index.html">
-        <img src="./img/logo.png" alt="logo" class="page-header__item"
-      /></a>
-      <nav class="main-navigation page-header__item">
-        <div>
-          <ul role="menubar" class="navigation-list">
-            <li role="presentation">
-              <a
-                href="./index.html"
-                role="menuitem"
-                class="navigation-list__item navigation-list__item--active"
-                >Home</a
+  <body class="bg-darkbg min-h-screen flex flex-col text-darktext">
+    <header
+      class="flex items-center justify-between px-8 py-4 bg-darkcard shadow fixed w-full z-10 top-0 left-0"
+    >
+      <a href="#home" class="transition-transform hover:scale-105">
+        <img src="./img/logo.png" alt="logo" class="h-12 w-auto" />
+      </a>
+      <nav class="flex items-center w-full max-w-6xl mx-auto">
+        <ul
+          class="flex flex-1 justify-evenly items-center space-x-0 text-lg font-semibold"
+        >
+          <li>
+            <span class="text-lg font-bold text-darktext">Find me on</span>
+          </li>
+          <li>
+            <a href="https://github.com/VinnieCodes" target="_blank">
+              <img
+                width="32"
+                height="32"
+                src="./img/394187_github_icon.svg"
+                alt="Github"
+                class="hover:scale-110 transition"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=vincentathorne2005@gmail.com"
+              target="_blank"
+            >
+              <img
+                width="32"
+                height="32"
+                src="./img/gmail-icon.png"
+                alt="Gmail"
+                class="hover:scale-110 transition"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/vincent-thorne/"
+              target="_blank"
+            >
+              <img
+                width="32"
+                height="32"
+                src="./img/317750_linkedin_icon.svg"
+                alt="LinkedIn"
+                class="hover:scale-110 transition"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="./pdf/Resume.pdf" target="_blank">
+              <button
+                class="flex items-center gap-1 px-4 py-1 bg-customblue text-white rounded shadow transition font-semibold text-sm hover:scale-105 hover:bg-customblue"
               >
-            </li>
-            <li role="presentation">
-              <a
-                href="./about.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >About Me</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="./contact.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >Contact Me</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="./work.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >My Work</a
-              >
-            </li>
-          </ul>
-        </div>
+                My Resume
+                <span class="material-symbols-outlined text-base"
+                  >open_in_new</span
+                >
+              </button>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#home"
+              role="menuitem"
+              class="scroll-smooth transition-transform"
+              ><button class="transition hover:scale-105 text-customblue">
+                Home
+              </button>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              role="menuitem"
+              class="transition scroll-smooth transition-transform"
+              ><button class="transition hover:scale-105 hover:text-customblue">
+                About Me
+              </button>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              role="menuitem"
+              class="transition scroll-smooth transition-transform"
+            >
+              <button class="transition hover:scale-105 hover:text-customblue">
+                Contact Me
+              </button>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#work"
+              role="menuitem"
+              class="transition scroll-smooth transition-transform"
+              ><button class="transition hover:scale-105 hover:text-customblue">
+                My Work
+              </button>
+            </a>
+          </li>
+        </ul>
       </nav>
     </header>
 
-    <div class="profile">
-      <img
-        class="profile__portrait"
-        src="./img/me-in-tux-square.jpg"
-        alt="A photograph of me in a handsome tux"
-      />
-      <h1>Hello World!</h1>
-      <p class="call-to-action">My name is Vincent Thorne</p>
-      <p class="call-to-action">
-        I am a full-stack web developer from California
-      </p>
-
-      <a href="https://vinniecodes.github.io/portfolio-website/work.html"
-        ><button type="button">Checkout my code</button></a
+    <main class="flex-1 flex flex-col items-center justify-center px-4 pt-32">
+      <!-- Home Section -->
+      <section
+        id="home"
+        class="w-full flex flex-col items-center justify-center scroll-mt-24"
       >
-    </div>
-
-    <footer class="page-footer">
-      <a href="./pdf/Resume.pdf" target="_blank">
-        <button class="button cv" id="resume-button">
-          My Resume <span class="material-symbols-outlined"> open_in_new </span>
-        </button>
-      </a>
-      <h3>Find me on</h3>
-      <div class="social-media">
-        <a href="https://github.com/VinnieCodes" target="_blank">
-          <img
-            class="FMOIcons"
-            width="40"
-            height="40"
-            src="./img/394187_github_icon.svg"
-            alt="Github"
-          />
-        </a>
-        <a
-          href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=vincentathorne2005@gmail.com"
-          target="_blank"
+        <div
+          class="max-w-xl w-full bg-darkcard rounded-lg shadow-lg p-8 mb-10 flex flex-col items-center"
         >
           <img
-            class="FMOIcons"
-            width="40"
-            height="40"
-            src="./img/gmail-icon.png"
-            alt="Gmail"
+            src="./img/me-in-tux-square.jpg"
+            alt="A photograph of me in a handsome tux"
+            class="rounded-full w-40 h-40 object-cover mb-6 shadow"
           />
-        </a>
-        <a href="https://www.linkedin.com/in/vincent-thorne/" target="_blank">
-          <img
-            class="FMOIcons"
-            width="40"
-            height="40"
-            src="./img/317750_linkedin_icon.svg"
-            alt="LinkedIn"
-        /></a>
-      </div>
-      <br />
+          <h1 class="text-4xl font-bold mb-4 text-darktext">Hello World!</h1>
+          <p class="text-xl text-darktext mb-2 font-semibold">
+            My name is Vincent Thorne
+          </p>
+          <p class="text-lg text-darktext mb-6 font-medium">
+            I am a full-stack web developer from California
+          </p>
+          <a href="#work" class="scroll-smooth">
+            <button
+              type="button"
+              class="px-6 py-2 bg-customblue text-white rounded shadow transition font-semibold transition hover:scale-105 hover:bg-customblue"
+            >
+              Checkout my code
+            </button>
+          </a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section
+        id="about"
+        class="w-full flex flex-col items-center justify-center scroll-mt-24"
+      >
+        <div
+          class="max-w-2xl w-full bg-darkcard rounded-lg shadow-lg p-8 mb-10"
+        >
+          <h2 class="text-4xl font-bold mb-6 text-center text-darktext">
+            About Me
+          </h2>
+          <div class="flex flex-col items-center">
+            <img
+              src="./img/vinnieInSun.PNG"
+              alt="Vinnie in the sun"
+              class="rounded-full w-40 h-40 object-cover mb-6 shadow"
+            />
+            <h3 class="text-2xl font-bold mb-4 text-center text-darktext">
+              Hi, I'm Vincent Thorne, an aspiring full-stack web developer
+              passionate about creating seamless and engaging web experiences.
+            </h3>
+          </div>
+          <p class="text-darktext text-lg mt-4 text-center font-medium">
+            I specialize in designing and developing dynamic web applications,
+            with extensive experience in both front-end and back-end
+            technologies. My expertise enables me to deliver efficient,
+            user-friendly solutions tailored to client needs. I am currently
+            open and available for full-time opportunities where I can
+            contribute my skills to impactful projects.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="w-full flex flex-col items-center justify-center scroll-mt-24"
+      >
+        <div class="max-w-xl w-full bg-darkcard rounded-lg shadow-lg p-8 mb-10">
+          <h2 class="text-4xl font-bold mb-6 text-center text-darktext">
+            Contact Me
+          </h2>
+          <div class="flex flex-col items-center">
+            <h3 class="text-xl text-darktext mb-4 text-center font-semibold">
+              <a
+                href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=vincentathorne2005@gmail.com"
+                class="text-customblue hover:underline font-semibold"
+                >Email: vincentathorne2005@gmail.com</a
+              ><br /><br />
+              <a
+                href="tel:1(916)-598-1681"
+                class="text-customblue hover:underline font-semibold"
+                >Call me at: 1(916)-598-1681</a
+              >
+              <br />
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work Section -->
+      <section id="work" class="w-full max-w-7xl mb-10 scroll-mt-24">
+        <h2 class="text-4xl font-bold mb-8 text-center text-darktext">Work</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Grid items will live here -->
+          <div class="bg-darkcard rounded-lg shadow p-6 flex flex-col">
+            <h3 class="text-2xl font-bold mb-2 text-customblue">Pokedex</h3>
+            <div class="flex justify-center mb-4">
+              <img
+                src="./img/pokedex.png"
+                alt="pokedex"
+                class="rounded shadow max-w-full h-auto"
+              />
+            </div>
+            <p class="text-darktext mb-4 flex-1 font-medium">
+              This App fetches all 150 pokemon and lists them, clicking a
+              pokemon will bring up a modal with basic info about the pokemon.
+              The background color of the modal will reflect the type of Pokemon
+              which was clicked on.
+            </p>
+            <div class="flex flex-col gap-1 font-semibold">
+              <a
+                href="https://vinniecodes.github.io/simple-js-app/"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >Project</a
+              >
+              <a
+                href="https://github.com/VinnieCodes/simple-js-app"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >See project on GitHub</a
+              >
+            </div>
+          </div>
+          <!-- myFlix Backend -->
+          <div class="bg-darkcard rounded-lg shadow p-6 flex flex-col">
+            <h3 class="text-2xl font-bold mb-2 text-customblue">
+              myFlix Backend
+            </h3>
+            <img
+              src="./img/movieAPI.png"
+              alt="movie API"
+              class="rounded shadow max-w-full h-auto mx-auto mb-4"
+            />
+            <p class="text-darktext mb-4 flex-1 font-medium">
+              The backend component of the myFlix App is developed in
+              JavaScript, leveraging Express, Node.js, Mongoose, bcrypt,
+              Passport, and CORS. It includes auth.js, server.js, index.js, and
+              models.js files that collaboratively deliver server functionality,
+              authentication, CRUD operations, and essential app features.
+            </p>
+            <a
+              href="https://github.com/VinnieCodes/Movie-api"
+              target="_blank"
+              class="text-customblue hover:underline font-semibold"
+              >See project on GitHub</a
+            >
+          </div>
+          <!-- myFlix React -->
+          <div class="bg-darkcard rounded-lg shadow p-6 flex flex-col">
+            <h3 class="text-2xl font-bold mb-2 text-customblue">
+              myFlix React
+            </h3>
+            <img
+              src="./img/myflix.png"
+              alt="movie API"
+              class="rounded shadow max-w-full h-auto mx-auto mb-4"
+            />
+            <p class="text-darktext mb-4 flex-1 font-medium">
+              The front-end of the 'myFlix' app utilizes a custom API to
+              interact with an externally hosted NoSQL database. Built with
+              React and JavaScript, it relies on dependencies such as React,
+              JavaScript, and React Bootstrap.
+            </p>
+            <div class="flex flex-col gap-1 font-semibold">
+              <a
+                href="https://my-flix20.netlify.app/login"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >Project</a
+              >
+              <a
+                href="https://github.com/VinnieCodes/myFlix-client"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >See project on GitHub</a
+              >
+              <a
+                href="./pdf/caseStudy.pdf"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >View case study</a
+              >
+            </div>
+          </div>
+          <!-- Meet App -->
+          <div class="bg-darkcard rounded-lg shadow p-6 flex flex-col">
+            <h3 class="text-2xl font-bold mb-2 text-customblue">Meet App</h3>
+            <img
+              src="./img/4.10project.png"
+              alt="Meet App screenshot"
+              class="rounded shadow max-w-full h-auto mx-auto mb-4"
+            />
+            <p class="text-darktext mb-4 flex-1 font-medium">
+              A serverless, progressive web application (PWA) with React using a
+              test-driven development (TDD) technique. The app uses the Google
+              Calendar API to fetch upcoming events and view them both as a
+              list, as well as pie and plot charts. Dependencies: React, JS,
+              Recharts, GH-Pages.
+            </p>
+            <div class="flex flex-col gap-1 font-semibold">
+              <a
+                href="https://vinniecodes.github.io/meet/"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >Project</a
+              >
+              <a
+                href="https://github.com/VinnieCodes/meet"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >See project on GitHub</a
+              >
+              <a
+                href="./pdf/MeetAppCaseStudy.pdf"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >View case study</a
+              >
+            </div>
+          </div>
+          <!-- Chat App -->
+          <div class="bg-darkcard rounded-lg shadow p-6 flex flex-col">
+            <h3 class="text-2xl font-bold mb-2 text-customblue">Chat App</h3>
+            <img
+              src="./img/chat-app.jpg"
+              alt="Chat App screenshot"
+              class="rounded shadow max-w-full h-auto mx-auto mb-4"
+            />
+            <p class="text-darktext mb-4 flex-1 font-medium">
+              ChatApp is a real-time messaging application developed with React
+              Native, Firebase, and Expo, allowing users to send and receive
+              messages, share images, and transmit their current location, with
+              offline message caching supported through AsyncStorage. The
+              technologies used in building the app include React Native, Expo,
+              Expo ImagePicker, Expo Location, Google Firestore/Firebase, the
+              Gifted Chat Library, and Android Studio.
+            </p>
+            <a
+              href="https://github.com/VinnieCodes/Chat-App"
+              target="_blank"
+              class="text-customblue hover:underline font-semibold"
+              >See project on GitHub</a
+            >
+          </div>
+          <!-- myFlix Angular -->
+          <div class="bg-darkcard rounded-lg shadow p-6 flex flex-col">
+            <h3 class="text-2xl font-bold mb-2 text-customblue">
+              myFlix Angular
+            </h3>
+            <img
+              src="./img/myFlixAngular.png"
+              alt="My Flix Angular screenshot"
+              class="rounded shadow max-w-full h-auto mx-auto mb-4"
+            />
+            <p class="text-darktext mb-4 flex-1 font-medium">
+              The myFlix Angular Client is a web application that allows users
+              to explore a movie database, view detailed movie information,
+              manage their favorite movies, and handle user accounts. Built with
+              Angular, the app connects to a backend service for user
+              authentication and movie data management. It leverages Angular
+              Material for a responsive, user-friendly interface, and uses RxJS
+              for efficient management of asynchronous data and reactive
+              programming.
+            </p>
+            <div class="flex flex-col gap-1 font-semibold">
+              <a
+                href="https://vinniecodes.github.io/meet/"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >Project</a
+              >
+              <a
+                href="https://github.com/VinnieCodes/meet"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >See project on GitHub</a
+              >
+            </div>
+          </div>
+          <!-- Recipe App -->
+          <div class="bg-darkcard rounded-lg shadow p-6 flex flex-col">
+            <h3 class="text-2xl font-bold mb-2 text-customblue">Recipe App</h3>
+            <img
+              src="./img/recipeApp.png"
+              alt="recipe app screenshot"
+              class="rounded shadow max-w-full h-auto mx-auto mb-4"
+            />
+            <p class="text-darktext mb-4 flex-1 font-medium">
+              The Recipe Application is a platform that allows users to explore
+              a curated collection of recipes, log in to their accounts, and
+              access detailed recipe information. Built with the Django
+              framework, the application utilizes a PostgreSQL database for
+              efficient data storage and management. It combines HTML and CSS to
+              deliver a clean, user-friendly interface, ensuring a seamless
+              experience for users as they browse and discover new culinary
+              inspirations.
+            </p>
+            <div class="flex flex-col gap-1 font-semibold">
+              <a
+                href="https://radiant-dusk-46237-b5f94eb37a64.herokuapp.com/"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >Project</a
+              >
+              <a
+                href="https://github.com/VinnieCodes/Recipe-App-Final"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >See project on GitHub</a
+              >
+              <a
+                href="./pdf/RecipeAppCaseStudy.pdf"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >View case study</a
+              >
+            </div>
+          </div>
+          <!-- Vanilla JS Game -->
+          <div class="bg-darkcard rounded-lg shadow p-6 flex flex-col">
+            <h3 class="text-2xl font-bold mb-2 text-customblue">
+              Vanilla JS Game
+            </h3>
+            <div class="flex justify-center mb-4">
+              <img
+                src="./img/game.png"
+                alt="Vanilla Js Game"
+                class="rounded shadow max-w-full h-auto"
+              />
+            </div>
+            <p class="text-darktext mb-4 flex-1 font-medium">
+              A browser-based game built with HTML5, CSS3, and vanilla
+              JavaScript. This project helped solidify my understanding of core
+              web development concepts, including object-oriented programming,
+              state management, and 2D animation. It was a hands-on opportunity
+              to deepen my skills while building something fun and interactive.
+            </p>
+            <div class="flex flex-col gap-1 font-semibold">
+              <a
+                href="https://vinniecodes.github.io/Vanilla-Javascript-Game/"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >Project</a
+              >
+              <a
+                href="https://github.com/VinnieCodes/Vanilla-Javascript-Game"
+                target="_blank"
+                class="text-customblue hover:underline"
+                >See project on GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-darkcard border-t py-8 px-4 flex flex-col items-center">
+      <!-- Remove Find me on and Resume button from footer if desired -->
     </footer>
     <script src="js/tota11y.min.js"></script>
+    <script>
+      // Optional: smooth scroll polyfill for older browsers
+      document.querySelectorAll("a.scroll-smooth").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href && href.startsWith("#")) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    </script>
   </body>
 </html>

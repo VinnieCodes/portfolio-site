@@ -24,65 +24,70 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new"
     />
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="about-body">
-    <header class="page-header">
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+    <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
       <a href="./index.html">
-        <img src="./img/logo.png" alt="logo" class="page-header__item"
-      /></a>
-      <nav class="main-navigation page-header__item">
-        <div>
-          <ul role="menubar" class="navigation-list">
-            <li role="presentation">
-              <a
-                href="./index.html"
-                role="menuitem"
-                class="navigation-list__item navigation-list__item--active"
-                >Home</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="./about.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >About Me</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="./contact.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >Contact Me</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="./work.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >My Work</a
-              >
-            </li>
-          </ul>
-        </div>
+        <img src="./img/logo.png" alt="logo" class="h-12 w-auto" />
+      </a>
+      <nav>
+        <ul role="menubar" class="flex space-x-6 text-lg font-semibold">
+          <li role="presentation">
+            <a
+              href="./index.html"
+              role="menuitem"
+              class="hover:text-blue-600 transition"
+              >Home</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              href="./about.html"
+              role="menuitem"
+              class="text-blue-600 font-bold underline"
+              >About Me</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              href="./contact.html"
+              role="menuitem"
+              class="hover:text-blue-600 transition"
+              >Contact Me</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              href="./work.html"
+              role="menuitem"
+              class="hover:text-blue-600 transition"
+              >My Work</a
+            >
+          </li>
+        </ul>
       </nav>
     </header>
-    <center>
-      <div class="center-content">
-        <h1>About Me</h1>
-        <img
-          class="profile__portrait"
-          src="./img/vinnieInSun.PNG"
-          alt="Vinnie in the sun"
-        />
-        <h2>
-          Hi, I'm Vincent Thorne, an aspiring full-stack web developer
-          passionate about creating seamless and engaging web experiences.
-        </h2>
-
-        <p>
+    <main class="flex-1 flex flex-col items-center justify-center px-4">
+      <div
+        class="max-w-2xl w-full bg-white rounded-lg shadow-lg p-8 mt-10 mb-10"
+      >
+        <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">
+          About Me
+        </h1>
+        <div class="flex flex-col items-center">
+          <img
+            src="./img/vinnieInSun.PNG"
+            alt="Vinnie in the sun"
+            class="rounded-full w-40 h-40 object-cover mb-6 shadow"
+          />
+          <h2 class="text-2xl font-bold mb-4 text-center text-gray-700">
+            Hi, I'm Vincent Thorne, an aspiring full-stack web developer
+            passionate about creating seamless and engaging web experiences.
+          </h2>
+        </div>
+        <p class="text-gray-700 text-lg mt-4 text-center font-medium">
           I specialize in designing and developing dynamic web applications,
           with extensive experience in both front-end and back-end technologies.
           My expertise enables me to deliver efficient, user-friendly solutions
@@ -91,22 +96,25 @@
           projects.
         </p>
       </div>
-    </center>
-    <footer class="page-footer">
-      <a href="./pdf/Resume.pdf" target="_blank">
-        <button class="button cv" id="resume-button">
-          My Resume <span class="material-symbols-outlined"> open_in_new </span>
+    </main>
+    <footer class="bg-white border-t py-8 px-4 flex flex-col items-center">
+      <a href="./pdf/Resume.pdf" target="_blank" class="mb-4">
+        <button
+          class="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition font-semibold"
+        >
+          My Resume
+          <span class="material-symbols-outlined text-xl">open_in_new</span>
         </button>
       </a>
-      <h3>Find me on</h3>
-      <div class="social-media">
+      <h3 class="text-lg font-bold mb-2">Find me on</h3>
+      <div class="flex space-x-6 mb-2">
         <a href="https://github.com/VinnieCodes" target="_blank">
           <img
-            class="FMOIcons"
             width="40"
             height="40"
             src="./img/394187_github_icon.svg"
             alt="Github"
+            class="hover:scale-110 transition"
           />
         </a>
         <a
@@ -114,21 +122,22 @@
           target="_blank"
         >
           <img
-            class="FMOIcons"
             width="40"
             height="40"
             src="./img/gmail-icon.png"
             alt="Gmail"
+            class="hover:scale-110 transition"
           />
         </a>
         <a href="https://www.linkedin.com/in/vincent-thorne/" target="_blank">
           <img
-            class="FMOIcons"
             width="40"
             height="40"
             src="./img/317750_linkedin_icon.svg"
             alt="LinkedIn"
-        /></a>
+            class="hover:scale-110 transition"
+          />
+        </a>
       </div>
       <br />
     </footer>
